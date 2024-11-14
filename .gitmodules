@@ -8,3 +8,6 @@
 [submodule "jenkins-ui"]
 	path = jenkins-ui
 	url = https://github.com/lephat08/jenkins-ui.git
+[submodule "portfolio"]
+	path = portfolio
+	url = https://github.com/lephat08/portfolio.git
