@@ -5,3 +5,6 @@
 	path = argocd-test
 	url = https://github.com/lephat08/argocd-test.git
 
+[submodule "jenkins-ui"]
+	path = jenkins-ui
+	url = https://github.com/lephat08/jenkins-ui.git
