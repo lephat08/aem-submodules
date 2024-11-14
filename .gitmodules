@@ -1,0 +1,3 @@
+[submodule "jenkins-k8s"]
+	path = jenkins-k8s
+	url = https://github.com/lephat08/jenkins-k8s.git
