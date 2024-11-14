@@ -4,6 +4,6 @@
 [submodule "argocd-test"]
 	path = argocd-test
 	url = https://github.com/lephat08/argocd-test.git
-[submodule "ci-cd-intro/infra"]
-	path = ci-cd-intro/infra
+[submodule "ci-cd-intro"]
+	path = ci-cd-intro
 	url = https://github.com/lephat08/ci-cd-intro.git
