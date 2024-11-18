@@ -34,8 +34,8 @@ jobs:
         git config --global user.email "lehuuphat08@gmail.com"
         git add .
         git commit -m "Update submodules"
-        #git remote add origin https://github.com/lephat08/aem0merge-repo.git
-        #git branch -M main
+        git remote add origin https://github.com/lephat08/aem0merge-repo.git
+        git branch -M main
         git push -u origin main
       env:
         TEST_GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
