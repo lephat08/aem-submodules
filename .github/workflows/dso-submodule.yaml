@@ -28,14 +28,14 @@ jobs:
         fi
 
     - name: Commit and push changes to new repository
-      #if: steps.detect_changes.outputs.changes == 'true'
+      if: env.changes == 'true'
       run: |
         git config --global user.name "lephat08"
         git config --global user.email "lehuuphat08@gmail.com"
         git add .
-        git commit -m "Update submodules"
-        git remote add origin https://github.com/lephat08/aem0merge-repo.git
+        git commit -m "Update submodules" || echo "No changes to commit"
+        git remote set-url origin https://github.com/lephat08/aem0merge-repo.git
         git branch -M main
         git push -u origin main
       env:
-        TEST_GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
