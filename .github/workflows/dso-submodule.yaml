@@ -30,8 +30,8 @@ jobs:
     - name: Commit and push changes to new repository
       if: env.changes == 'true'
       run: |
-        git config --global user.name "lephat08"
-        git config --global user.email "lehuuphat08@gmail.com"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add .
         git commit -m "Update submodules" || echo "No changes to commit"
         git remote set-url origin https://x-access-token:${{ secrets.TEST_GITHUB_TOKEN }}@github.com/lephat08/aem0merge-repo.git
