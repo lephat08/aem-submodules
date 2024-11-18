@@ -1,0 +1,41 @@
+name: Sync Submodule Changes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout parent repository with submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Update submodules
+      run: git submodule update --remote --recursive
+
+    - name: Detect changes
+      id: detect_changes
+      run: |
+        if [[ -n "$(git status)" ]]; then
+          echo "changes=true" >> $GITHUB_ENV
+        else
+          echo "changes=false" >> $GITHUB_ENV
+        fi
+
+    - name: Commit and push changes to new repository
+      if: steps.detect_changes.outputs.changes == 'true'
+      run: |
+        git config --global user.name "nolan.le"
+        git config --global user.email "nolan.le@changiairport.com"
+        git add .
+        git commit -m "Update submodules"
+        git remote add origin https://github.com/lephat08/aem0merge-repo.git
+        git branch -M main
+        git push -u origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
