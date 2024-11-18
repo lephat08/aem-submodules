@@ -30,8 +30,8 @@ jobs:
     - name: Commit and push changes to new repository
       #if: steps.detect_changes.outputs.changes == 'true'
       run: |
-        git config --global user.name "nolan.le"
-        git config --global user.email "nolan.le@changiairport.com"
+        git config --global user.name "lephat08"
+        git config --global user.email "lehuuphat08@gmail.com"
         git add .
         git commit -m "Update submodules"
         #git remote add origin https://github.com/lephat08/aem0merge-repo.git
