@@ -34,7 +34,7 @@ jobs:
         git config --global user.email "lehuuphat08@gmail.com"
         git add .
         git commit -m "Update submodules" || echo "No changes to commit"
-        git remote set-url origin https://github.com/lephat08/aem0merge-repo.git
+        git remote set-url origin https://x-access-token:${{ secrets.TEST_GITHUB_TOKEN }}@github.com/lephat08/aem0merge-repo.git
         git branch -M main
         git push -u origin main
       env:
