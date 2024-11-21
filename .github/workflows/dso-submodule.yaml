@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      branch-name:
+        description: "Branch to checkout in the reusable workflow"
+        required: true
 
 jobs:
   sync-submodule:
