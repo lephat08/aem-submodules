@@ -32,6 +32,10 @@ jobs:
           echo "changes=false" >> $GITHUB_ENV
         fi
 
+    - name: Show input value
+      run: |
+        echo Hello ${{ github.event.inputs.branch-name }}
+
     # - name: Commit and push changes to new repository
     #   if: env.changes == 'true'
     #   run: |
